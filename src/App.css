@@ -48,3 +48,15 @@ ol, ul {
 .game-info {
   margin-left: 20px;
 }
+
+.li-bolded{
+  background: black;
+  padding: 10px;
+}
+
+.li-bolded button {
+  appearance: none;
+  border:none;
+  color:white;
+  background: transparent;
+}

@@ -49,10 +49,10 @@ class App extends React.Component {
         const moves = history.map((step, move) => {
             const desc = move ? `Go to move # ${move}` : 'Go to game start';
             return (
-                <li key={move}>
+                <li key={move} className={move === this.state.stepNumber ?  'li-bolded'  : ''}>
                     <button onClick={() => {
                         this.jumpToMove(move)
-                    }}>{desc} -- {step.move}</button>
+                    }}>{desc} -- {step.move} </button>
                 </li>
             );
         });
