@@ -7,10 +7,11 @@ class App extends React.Component {
         super(props);
         this.state = {
             history: [{
+                move: '',
                 squares: Array(9).fill(null)
             }],
             stepNumber: 0,
-            xIsNext: true
+            xIsNext: true,
         }
     }
 
@@ -24,7 +25,8 @@ class App extends React.Component {
         squares[i] = this.state.xIsNext ? 'X' : 'O';
         this.setState({
             history: history.concat([{
-                squares: squares
+                squares: squares,
+                move: `${squares[i]} to col ${(i % 3) + 1 } and row ${(Math.floor(i / 3) + 1)} `,
             }]),
             xIsNext: !this.state.xIsNext,
             stepNumber: history.length
@@ -34,7 +36,7 @@ class App extends React.Component {
     jumpToMove(step) {
         this.setState({
             stepNumber: step,
-            xIsNext: (step % 2)  === 0
+            xIsNext: (step % 2) === 0
         })
     }
 
@@ -50,7 +52,7 @@ class App extends React.Component {
                 <li key={move}>
                     <button onClick={() => {
                         this.jumpToMove(move)
-                    }}>{desc}</button>
+                    }}>{desc} -- {step.move}</button>
                 </li>
             );
         });
