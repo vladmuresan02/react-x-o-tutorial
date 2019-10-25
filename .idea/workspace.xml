@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6dcd18f7-0e83-421c-a525-c0cb88cda76b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board/Board.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board/Board.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,7 +42,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -69,6 +70,8 @@
       <workItem from="1571571576604" duration="27000" />
       <workItem from="1571571626797" duration="5035000" />
       <workItem from="1571686489861" duration="9330000" />
+      <workItem from="1571930799266" duration="1566000" />
+      <workItem from="1571991258784" duration="1693000" />
     </task>
     <servers />
   </component>
@@ -80,7 +83,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

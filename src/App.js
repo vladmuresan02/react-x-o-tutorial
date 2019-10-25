@@ -12,6 +12,7 @@ class App extends React.Component {
             }],
             stepNumber: 0,
             xIsNext: true,
+            movesAscendingOrder: false
         }
     }
 
@@ -30,6 +31,7 @@ class App extends React.Component {
             }]),
             xIsNext: !this.state.xIsNext,
             stepNumber: history.length
+
         })
     }
 
@@ -40,13 +42,19 @@ class App extends React.Component {
         })
     }
 
+    sortMoves() {
+        this.setState({
+            movesAscendingOrder : !this.state.movesAscendingOrder
+        })
+    }
+
     render() {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
         const winner = calculateWinner(current.squares);
         let status;
         status = winner ? `Winner: ${winner}` : `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
-        const moves = history.map((step, move) => {
+        let moves = history.map((step, move) => {
             const desc = move ? `Go to move # ${move}` : 'Go to game start';
             return (
                 <li key={move} className={move === this.state.stepNumber ?  'li-bolded'  : ''}>
@@ -56,6 +64,11 @@ class App extends React.Component {
                 </li>
             );
         });
+
+        if(!this.state.movesAscendingOrder){
+            moves = moves.sort((a,b) => b.key - a.key)
+        }
+
 
         return (
             <div className="game">
@@ -67,6 +80,9 @@ class App extends React.Component {
                         {status}
                     </div>
                     <ol>
+                        <button onClick={() => this.sortMoves() }>
+                            {this.state.movesAscendingOrder ? 'sort asc' : ' sort desc'}
+                        </button>
                         {moves}
                     </ol>
                 </div>
